@@ -26,6 +26,20 @@ Board::Board()
     critterCount = 1;
 }
 
+//overload constructor to allow user to decide the size of the board
+Board::Board(int rows, int columns) {
+	//allocate memory
+	grid = new Critter**[rows];
+	for(int i=0; i<rows< i++)
+		grid[i] = new Critter*[columns];
+	
+	//intitialize grid
+	for(int i=0; i<rows; i++)
+		for(j=0; j<columns; j++)
+			grid[i][j] = NULL;
+}
+		
+
 Board::~Board()
 {
     for(int i = 0; i < 20; i++)
@@ -34,6 +48,24 @@ Board::~Board()
     }
 
     delete [] grid;
+}
+
+//getters
+int getRows() {
+	return rows;
+}
+
+int getColumns() {
+	return columns;
+}
+
+//setters
+void setRows(int rowsIn) {
+	rows = rowsIn;
+}
+
+void setColumns() {
+	columns = columnsIn;
 }
 
 void Board::printBoard()
