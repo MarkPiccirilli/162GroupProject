@@ -51,20 +51,20 @@ Board::~Board()
 }
 
 //getters
-int getRows() {
+int Board::getRows() {
 	return rows;
 }
 
-int getColumns() {
+int Board::getColumns() {
 	return columns;
 }
 
 //setters
-void setRows(int rowsIn) {
+void Board::setRows(int rowsIn) {
 	rows = rowsIn;
 }
 
-void setColumns() {
+void Board::setColumns() {
 	columns = columnsIn;
 }
 
